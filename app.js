@@ -1,6 +1,6 @@
 const express = require('express');
 
-const  authRoutes = require('./modules');
+const  authRoutes = require('./modules/index');
 
 const  app = express();
 
@@ -11,7 +11,7 @@ app.set('view engine','ejs');
 
 app.use(authRoutes);  //here it will automatically consider our routes which are in routes folder in routes.js
 
-
+ 
 
 app.listen(port, ()=>{
     console.log(`Example app listening at http://localhost:${port}`);

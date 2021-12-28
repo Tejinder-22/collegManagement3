@@ -7,18 +7,24 @@ const path = require('path');
 
 const StudentInfo = require('./studentModule/controllers/studentController');
 
- const StudentInsert = require('./insertCourseModule/controllers/insertStudentController');
+const StudentInsert = require('./insertCourseModule/controllers/insertStudentController');
 
 const bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({
-    extended: false
-});
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const router = express.Router();
 
 router.get('/', StudentInfo.dashboard); 
 
 router.get('/st_info', StudentInfo.studentInfo);
+
+router.get('/courseInfo',StudentInfo.courseInfo);
+
+router.get('/courses',StudentInfo.courses);
+
+router.get('/:stid',StudentInfo.courses);
+
 
 router.post('/getInfo', urlencodedParser, StudentInfo.getAllInfo);
 
