@@ -1,5 +1,5 @@
-const studentModule = require('./studentModule');
-const insertCourseModule = require('./insertCourseModule');
+ require('./studentModule');
+require('./insertCourseModule');
 
 const express = require('express');
 const path = require('path');
@@ -15,9 +15,12 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const router = express.Router();
 
-router.get('/', StudentInfo.dashboard); 
+// router.get('/', StudentInfo.dashboard); 
+router.get('/', StudentInsert.dashboard);
 
 router.get('/st_info', StudentInfo.studentInfo);
+
+router.get('/addstudent', StudentInsert.myforms);
 
 router.get('/courseInfo',StudentInfo.courseInfo);
 
@@ -29,9 +32,9 @@ router.get('/:stid',StudentInfo.courses);
 router.post('/getInfo', urlencodedParser, StudentInfo.getAllInfo);
 
 
-// router.get('/', StudentInsert.dashboard);
 
-router.get('/addStudent', StudentInsert.form);
+
+
 
 router.post('/register', urlencodedParser, StudentInsert.insertStudent);
 

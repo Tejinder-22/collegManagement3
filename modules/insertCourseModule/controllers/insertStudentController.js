@@ -9,17 +9,16 @@ exports.insertStudent = (req,res)=>{
    
    })
   
+}
 
+exports.myforms = (req,res)=>{
 
+  res.render('form'); 
 }
 
 exports.dashboard = (req,res)=>{
-
-  res.render('dashboard'); 
-}
-
-exports.form = (req,res)=>{
-  res.render('form'); 
+ 
+   res.render('dashboard');
 }
 
 
