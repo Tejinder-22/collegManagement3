@@ -7,7 +7,7 @@ exports.addFun = (req)=>{
     connection.query(sql1, function (err, data, fields) {
     if (err){ throw err}
     else{
-       const mydata = "inserted";
+       const mydata = "y";
        resolve(mydata); 
     }
   }); 
